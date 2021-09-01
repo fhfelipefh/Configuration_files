@@ -1,9 +1,6 @@
 ---
-- name: ansible_jdk
-  hosts: backend    
-  tasks:
+- name: ansible-jdk
   apt:
     name: openjdk-8-jdk
     state: latest
-    install_recommends: no  
-    become: yes
+    install_recommends: no
