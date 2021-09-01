@@ -1,10 +1,9 @@
 ---
-- hosts: all
-  become: yes
-  tasks: 
-- name: ansible-jdk
-    apt:
-      name:
-      - openjdk-8-jdk
-      state: latest
-     
+- name: jdk
+  hosts: all
+  become_user: root
+  tasks:
+    - name: openjdk installation
+      apt:
+        name: openjdk-8-jdk
+        install_recommends: no
